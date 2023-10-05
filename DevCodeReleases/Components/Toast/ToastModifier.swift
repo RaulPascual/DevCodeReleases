@@ -31,7 +31,7 @@ struct ToastModifier: ViewModifier {
                     }
                 })
             )
-            .onChange(of: toast) { _ in
+            .onChange(of: toast) { _, _ in
                 showToast()
             }
     }
