@@ -5,4 +5,4 @@
 
 iOS app with a minimum target of iOS 17 that lists each Xcode version with its details. 
 
-![simulator_screenshot_CE827F6F-0A00-4981-8A3B-42CC9588A4E6](https://github.com/RaulPascual/DevCodeReleases/assets/32883174/27dfd07b-c160-4cf3-94e5-46bec056ba06)
+![simulator_screenshot_393F2E20-D0D5-4E04-9A03-987FCAFDAFBC](https://github.com/RaulPascual/DevCodeReleases/assets/32883174/8ab4774f-88db-43df-9322-379119a2bc8a)
