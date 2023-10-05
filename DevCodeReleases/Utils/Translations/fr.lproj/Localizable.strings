@@ -1,0 +1,38 @@
+
+// Details
+"Details_sidemenu_menu" = "Menu";
+"Details_sidemenu_about_symbols" = "Proche de la symbologie";
+"Details_sidemenu_icon_mean" = "Que signifie chaque icône?";
+"Details_icon_date" = "Indique la date à laquelle la version a été publiée";
+"Details_icon_build" = "Indique la «construction» de la version";
+"Details_icon_ios" = "Indique la version iOS à laquelle la prise en charge est apportée dans la version";
+"Details_icon_mac" = "Indique la version macOS à laquelle la prise en charge est apportée dans la version";
+"Details_icon_tv" = "Indique la version prise en charge dans la version";
+"Details_icon_watch" = "Indique la version WatchOS à laquelle la prise en charge est apportée dans la version";
+"Details_icon_swift" = "Indique la version rapide qui inclut la version";
+"Details_release_date" = "Date de publication";
+"Details_other_info" = "Les autres informations";
+"Details_requires" = "A besoin";
+"Details_realease_notes_button" = "Ouvrez les notes de version";
+
+// Menu
+"Menu_differences_menu" = "Quelles sont les différences entre les versions?";
+"Menu_realase_explanation" = "Une version de lancement (Relaase) est une version de logiciel, de produit ou de service considéré comme stable et adapté pour être utilisé par le grand public. Cette version a généralement subi un processus de développement complet, des tests exhaustifs et une correction d'erreurs, et est considéré comme adéquat pour la distribution et l'utilisation dans la production.";
+"Menu_rc_explanation" = "Un candidat pour le lancement (publication du candidat ou RC) est une version qui se trouve à une étape avancée de développement et est considérée comme presque prête à être lancée comme une version de lancement. L'objectif principal du lancement d'un candidat est de collecter les derniers commentaires des utilisateurs et d'effectuer des tests supplémentaires pour s'assurer qu'il n'y a pas de problèmes critiques avant son lancement officiel. Si des erreurs importantes ne sont pas trouvées au cours de cette étape, le candidat au lancement peut devenir la version de lancement finale.";
+"Menu_beta_explanation" = "Une version bêta (bêta) est une version préliminaire de logiciel, de produit ou de service qui est mis à la disposition d'un groupe d'utilisateurs limité pour l'évaluation et le test. Les versions bêta sont lancées dans le but de collecter des commentaires, d'identifier les problèmes et d'améliorer avant la version de lancement. Ces versions contiennent souvent de nouvelles caractéristiques et peuvent toujours contenir des erreurs ou des problèmes de performances connus. Les utilisateurs des versions bêta sont généralement invités ou des bénévoles qui fournissent des commentaires aux développeurs pour aider à améliorer la qualité des produits avant leur lancement officiel.";
+
+// Home
+"Home_search" = "Numéro de version";
+
+// Favourites
+"Favourites_favourites_empty" = "Vous n'avez actuellement aucune versions préférées";
+"Favourites_favourites_title" = "Versions préférées";
+"Favourites_favourites_instructions" = "Pour ajouter des versions, glissez de droite à gauche dans la liste principale";
+
+// Onboarding
+"Onboarding_onboarding_title1" = "Toutes les versions disponibles";
+"Onboarding_onboarding_subtitle1" = "Avec tous les détails, toujours disponibles pour que vous puissiez les consulter";
+"Onboarding_onboarding_title2" = "Gardez vos visions préférées";
+"Onboarding_onboarding_subtitle2" = "Et demandez-leur chaque fois que vous en avez besoin, toujours dans la paume de votre main";
+"Onboarding_onboarding_title3" = "Personnalisez votre expérience utilisateur";
+"Onboarding_onboarding_subtitle3" = "Ajustez l'application à votre mesure: filtrez, recherchez et gardez vos versions préférées pour accéder rapidement aux informations dont vous avez besoin";

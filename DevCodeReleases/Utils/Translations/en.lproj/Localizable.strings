@@ -1,0 +1,38 @@
+
+// Details
+"Details_sidemenu_menu" = "Menu";
+"Details_sidemenu_about_symbols" = "About the symbology";
+"Details_sidemenu_icon_mean" = "What does each icon mean?";
+"Details_icon_date" = "Indicates the date on which the version has been published";
+"Details_icon_build" = "Indicates the 'Build' of the version";
+"Details_icon_ios" = "Indicates the iOS version to which support is given in the version";
+"Details_icon_mac" = "Indicates the macOS version to which support is given in the version";
+"Details_icon_tv" = "Indicates the version of which is supported in the version";
+"Details_icon_watch" = "Indicates the Watchos version to which support is given in the version";
+"Details_icon_swift" = "Indicates the Swift version that includes the version";
+"Details_release_date" = "Publication date";
+"Details_other_info" = "Other information";
+"Details_requires" = "Requires";
+"Details_realease_notes_button" = "Open Release notes";
+
+// Menu
+"Menu_differences_menu" = "What are the differences between the versions?";
+"Menu_realase_explanation" = "A launching version (relaase) is a version of software, product or service that is considered stable and suitable for being used by the general public. This version has generally gone through a complete development process, exhaustive tests and error correction, and is considered adequate for distribution and use in production.";
+"Menu_rc_explanation" = "A candidate for launching (Release candidate or RC) is a version that is in an advanced stage of development and is considered almost ready to be launched as a launch version. The main purpose of a candidate launching is to collect final comments of users and perform additional tests to ensure that there are no critical problems before its official launch. If important errors are not found during this stage, the candidate for launching can become the final launch version.";
+"Menu_beta_explanation" = "A beta (beta) version is a preliminary version of software, product or service that is made available to a limited user group for evaluation and test. Beta versions are launched with the aim of collecting comments, identifying problems and making improvements before the launch version. These versions often contain new characteristics and can still contain known errors or performance problems. Beta versions users are usually invited or volunteers who provide feedback to developers to help improve product quality before their official launch.";
+
+// Home
+"Home_search" = "Search by version number";
+
+// Favourites
+"Favourites_favourites_empty" = "You have no favorite versions currently";
+"Favourites_favourites_title" = "Favorite versions";
+"Favourites_favourites_instructions" = "To add versions, slide from right to left in the main list";
+
+// Onboarding
+"Onboarding_onboarding_title1" = "All versions available";
+"Onboarding_onboarding_subtitle1" = "With all the details, always available so you can consult them";
+"Onboarding_onboarding_title2" = "Save your favourite versions";
+"Onboarding_onboarding_subtitle2" = "And ask them whenever you need it, always in the palm of your hand";
+"Onboarding_onboarding_title3" = "Customize your user experience";
+"Onboarding_onboarding_subtitle3" = "Adjust the application to your measure: filter, search and keep your favorite versions to quickly access the information you need";

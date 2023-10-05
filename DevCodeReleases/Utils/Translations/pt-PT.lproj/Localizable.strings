@@ -1,0 +1,38 @@
+
+// Details
+"Details_sidemenu_menu" = "Cardápio";
+"Details_sidemenu_about_symbols" = "Perto da simbologia";
+"Details_sidemenu_icon_mean" = "O que cada ícone significa?";
+"Details_icon_date" = "Indica a data em que a versão foi publicada";
+"Details_icon_build" = "Indica a 'construção' da versão";
+"Details_icon_ios" = "Indica a versão iOS à qual o suporte é dado na versão";
+"Details_icon_mac" = "Indica a versão do macOS à qual o suporte é fornecido na versão";
+"Details_icon_tv" = "Indica cuja versão é suportada na versão";
+"Details_icon_watch" = "Indica a versão de vigia à qual o suporte é fornecido na versão";
+"Details_icon_swift" = "Indica a versão rápida que inclui a versão";
+"Details_release_date" = "Data de publicação";
+"Details_other_info" = "Outra informação";
+"Details_requires" = "Requer";
+"Details_realease_notes_button" = "Abra as notas da versão";
+
+// Menu
+"Menu_differences_menu" = "Quais são as diferenças entre as versões?";
+"Menu_realase_explanation" = "Uma versão de lançamento (RelAase) é uma versão do software, produto ou serviço considerado estável e adequado para ser usado pelo público em geral. Esta versão geralmente passou por um processo de desenvolvimento completo, testes exaustivos e correção de erros e é considerado adequado para distribuição e uso na produção.";
+"Menu_rc_explanation" = "Um candidato ao lançamento (candidato a release ou RC) é uma versão que está em um estágio avançado de desenvolvimento e é considerado quase pronto para ser lançado como uma versão de lançamento. O principal objetivo de um candidato ao lançar é coletar comentários finais dos usuários e realizar testes adicionais para garantir que não haja problemas críticos antes de seu lançamento oficial. Se erros importantes não forem encontrados durante esse estágio, o candidato para o lançamento pode se tornar a versão final de lançamento.";
+"Menu_beta_explanation" = "Uma versão beta (beta) é uma versão preliminar do software, produto ou serviço que é disponibilizado a um grupo de usuários limitado para avaliação e teste. As versões beta são lançadas com o objetivo de coletar comentários, identificar problemas e fazer melhorias antes da versão de lançamento. Essas versões geralmente contêm novas características e ainda podem conter erros conhecidos ou problemas de desempenho. Os usuários das versões beta geralmente são convidados ou voluntários que fornecem feedback aos desenvolvedores para ajudar a melhorar a qualidade do produto antes do lançamento oficial.";
+
+// Home
+"Home_search" = "Número da versão";
+
+// Favourites
+"Favourites_favourites_empty" = "Você não tem versões favoritas atualmente";
+"Favourites_favourites_title" = "Versões favoritas";
+"Favourites_favourites_instructions" = "Para adicionar versões, deslize da direita para a esquerda na lista principal";
+
+// Onboarding
+"Onboarding_onboarding_title1" = "Todas as versões disponíveis";
+"Onboarding_onboarding_subtitle1" = "Com todos os detalhes, sempre disponível para que você possa consultá -los";
+"Onboarding_onboarding_title2" = "Mantenha seus Seeisons favoritos";
+"Onboarding_onboarding_subtitle2" = "E pergunte a eles sempre que precisar, sempre na palma da sua mão";
+"Onboarding_onboarding_title3" = "Personalize sua experiência de usuário";
+"Onboarding_onboarding_subtitle3" = "Ajuste o aplicativo à sua medida: filtre, pesquise e mantenha suas versões favoritas para acessar rapidamente as informações necessárias";
