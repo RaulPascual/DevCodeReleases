@@ -15,6 +15,9 @@ extension HomeView {
         var resultList: [VersionModel] = []
         var selectedOption = "All"
         let options = ["All", "Beta", "Release"]
+        var showMenu: Bool = false
+        var searchText = ""
+        var favourites: [String] = (Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? [])
         
         func onAppear() async {
             await self.getXcodeVersions()
