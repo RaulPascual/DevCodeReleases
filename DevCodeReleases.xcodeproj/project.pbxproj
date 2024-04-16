@@ -36,9 +36,6 @@
 		C4432C812A26905A00FB0697 /* HomeModelServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C7B2A26905A00FB0697 /* HomeModelServer.swift */; };
 		C4432C842A26913B00FB0697 /* BaseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C832A26913B00FB0697 /* BaseExtension.swift */; };
 		C4432C862A2691BF00FB0697 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C852A2691BF00FB0697 /* ViewExtension.swift */; };
-		C4432C8D2A26932000FB0697 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C8A2A26932000FB0697 /* ToastView.swift */; };
-		C4432C8E2A26932000FB0697 /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C8B2A26932000FB0697 /* ToastModifier.swift */; };
-		C4432C8F2A26932000FB0697 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C8C2A26932000FB0697 /* Toast.swift */; };
 		C4432C912A2693C500FB0697 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4432C902A2693C500FB0697 /* Colors.xcassets */; };
 		C4432C932A2693E700FB0697 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C922A2693E700FB0697 /* ColorExtension.swift */; };
 		C4432C952A26942B00FB0697 /* TextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C942A26942B00FB0697 /* TextExtension.swift */; };
@@ -46,6 +43,14 @@
 		C4852B9C2A3DF429007E1AE8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852B962A3DF429007E1AE8 /* OnboardingView.swift */; };
 		C495357B2A2B40D5008F391A /* SystemsVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C495357A2A2B40D5008F391A /* SystemsVersions.swift */; };
 		C49535872A2B44E2008F391A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49535812A2B44E2008F391A /* DetailsView.swift */; };
+		C4CF61DF2BCEC12E0085AE3C /* VersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61DE2BCEC12E0085AE3C /* VersionInformation.swift */; };
+		C4CF61E12BCEC1400085AE3C /* VersionSDKs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E02BCEC1400085AE3C /* VersionSDKs.swift */; };
+		C4CF61E32BCEC1550085AE3C /* VersionPublicationDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E22BCEC1550085AE3C /* VersionPublicationDate.swift */; };
+		C4CF61E52BCEC1730085AE3C /* VersionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E42BCEC1730085AE3C /* VersionHeader.swift */; };
+		C4CF61E72BCEC1860085AE3C /* VersionChecksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E62BCEC1860085AE3C /* VersionChecksum.swift */; };
+		C4CF61E92BCEC1D60085AE3C /* VersionReleaseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */; };
+		C4CF61EB2BCEC2C00085AE3C /* VersionClang.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */; };
+		C4CF61ED2BCEC4730085AE3C /* OnboardViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */; };
 		C4D3F17F2A32528400FB50D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4D3F1812A32528400FB50D7 /* Localizable.strings */; };
 		C4D3F1872A32592A00FB50D7 /* LocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3F1862A32592A00FB50D7 /* LocalizedKeys.swift */; };
 		C4D3F1892A325BCD00FB50D7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3F1882A325BCD00FB50D7 /* StringExtension.swift */; };
@@ -84,9 +89,6 @@
 		C4432C7B2A26905A00FB0697 /* HomeModelServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModelServer.swift; sourceTree = "<group>"; };
 		C4432C832A26913B00FB0697 /* BaseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseExtension.swift; sourceTree = "<group>"; };
 		C4432C852A2691BF00FB0697 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		C4432C8A2A26932000FB0697 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
-		C4432C8B2A26932000FB0697 /* ToastModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
-		C4432C8C2A26932000FB0697 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		C4432C902A2693C500FB0697 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C4432C922A2693E700FB0697 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		C4432C942A26942B00FB0697 /* TextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtension.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 		C4852B962A3DF429007E1AE8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C495357A2A2B40D5008F391A /* SystemsVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsVersions.swift; sourceTree = "<group>"; };
 		C49535812A2B44E2008F391A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		C4CF61DE2BCEC12E0085AE3C /* VersionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInformation.swift; sourceTree = "<group>"; };
+		C4CF61E02BCEC1400085AE3C /* VersionSDKs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSDKs.swift; sourceTree = "<group>"; };
+		C4CF61E22BCEC1550085AE3C /* VersionPublicationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionPublicationDate.swift; sourceTree = "<group>"; };
+		C4CF61E42BCEC1730085AE3C /* VersionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionHeader.swift; sourceTree = "<group>"; };
+		C4CF61E62BCEC1860085AE3C /* VersionChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionChecksum.swift; sourceTree = "<group>"; };
+		C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionReleaseNotes.swift; sourceTree = "<group>"; };
+		C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionClang.swift; sourceTree = "<group>"; };
+		C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewSection.swift; sourceTree = "<group>"; };
 		C4D3F1802A32528400FB50D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4D3F1822A32528700FB50D7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4D3F1832A32528800FB50D7 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -284,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				C40BC7A92ACECBFD00550EBF /* WebView */,
-				C4432C892A26932000FB0697 /* Toast */,
 				C4432C962A26944800FB0697 /* LoaderView.swift */,
 			);
 			path = Components;
@@ -299,20 +308,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		C4432C892A26932000FB0697 /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-				C4432C8A2A26932000FB0697 /* ToastView.swift */,
-				C4432C8B2A26932000FB0697 /* ToastModifier.swift */,
-				C4432C8C2A26932000FB0697 /* Toast.swift */,
-			);
-			path = Toast;
-			sourceTree = "<group>";
-		};
 		C4852B912A3DF419007E1AE8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				C4852B962A3DF429007E1AE8 /* OnboardingView.swift */,
+				C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -320,9 +320,24 @@
 		C495357C2A2B44D5008F391A /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				C4CF61DD2BCEC11D0085AE3C /* VersionViews */,
 				C49535812A2B44E2008F391A /* DetailsView.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		C4CF61DD2BCEC11D0085AE3C /* VersionViews */ = {
+			isa = PBXGroup;
+			children = (
+				C4CF61DE2BCEC12E0085AE3C /* VersionInformation.swift */,
+				C4CF61E02BCEC1400085AE3C /* VersionSDKs.swift */,
+				C4CF61E22BCEC1550085AE3C /* VersionPublicationDate.swift */,
+				C4CF61E42BCEC1730085AE3C /* VersionHeader.swift */,
+				C4CF61E62BCEC1860085AE3C /* VersionChecksum.swift */,
+				C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */,
+				C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */,
+			);
+			path = VersionViews;
 			sourceTree = "<group>";
 		};
 		C4D3F17C2A3251FB00FB50D7 /* Translations */ = {
@@ -411,34 +426,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40B74BD2A38EC0D00499A3E /* FavouritesViewModel.swift in Sources */,
-				C4432C8D2A26932000FB0697 /* ToastView.swift in Sources */,
 				C41465FB2A291B95007A7431 /* HomeProvider.swift in Sources */,
 				C43981E22A37921500C55662 /* TextFieldSearcher.swift in Sources */,
 				C4432C742A26900D00FB0697 /* Constants.swift in Sources */,
 				C4432C7D2A26905A00FB0697 /* HomeViewModel.swift in Sources */,
+				C4CF61E12BCEC1400085AE3C /* VersionSDKs.swift in Sources */,
+				C4CF61DF2BCEC12E0085AE3C /* VersionInformation.swift in Sources */,
 				C4432C842A26913B00FB0697 /* BaseExtension.swift in Sources */,
 				C41465FF2A291C85007A7431 /* APIError.swift in Sources */,
 				C4432C812A26905A00FB0697 /* HomeModelServer.swift in Sources */,
 				C4432C6C2A268EB200FB0697 /* RequestMethod.swift in Sources */,
 				C4375C862A2FB51F00F83F17 /* AboutSymbologyView.swift in Sources */,
+				C4CF61ED2BCEC4730085AE3C /* OnboardViewSection.swift in Sources */,
+				C4CF61E72BCEC1860085AE3C /* VersionChecksum.swift in Sources */,
 				C4375C842A2FB1D400F83F17 /* SideView.swift in Sources */,
 				C4432C7C2A26905A00FB0697 /* HomeBusiness.swift in Sources */,
 				C436BD2E2A2A9B4800B7E400 /* VersionView.swift in Sources */,
-				C4432C8F2A26932000FB0697 /* Toast.swift in Sources */,
-				C4432C8E2A26932000FB0697 /* ToastModifier.swift in Sources */,
 				C40B74B62A38EBCB00499A3E /* FavouritesView.swift in Sources */,
 				C4432C7F2A26905A00FB0697 /* HomeModelView.swift in Sources */,
+				C4CF61E32BCEC1550085AE3C /* VersionPublicationDate.swift in Sources */,
 				C4852B9C2A3DF429007E1AE8 /* OnboardingView.swift in Sources */,
 				C495357B2A2B40D5008F391A /* SystemsVersions.swift in Sources */,
 				C4432C702A268F7500FB0697 /* HTTPClient.swift in Sources */,
+				C4CF61E92BCEC1D60085AE3C /* VersionReleaseNotes.swift in Sources */,
 				C49535872A2B44E2008F391A /* DetailsView.swift in Sources */,
 				C436BD302A2A9DD500B7E400 /* DateView.swift in Sources */,
 				C4432C952A26942B00FB0697 /* TextExtension.swift in Sources */,
 				C4D3F1892A325BCD00FB50D7 /* StringExtension.swift in Sources */,
+				C4CF61EB2BCEC2C00085AE3C /* VersionClang.swift in Sources */,
 				C4432C862A2691BF00FB0697 /* ViewExtension.swift in Sources */,
 				C4D3F1872A32592A00FB50D7 /* LocalizedKeys.swift in Sources */,
 				C41465FD2A291BC0007A7431 /* BaseProvider.swift in Sources */,
 				C4432C6A2A268E9700FB0697 /* Endpoint.swift in Sources */,
+				C4CF61E52BCEC1730085AE3C /* VersionHeader.swift in Sources */,
 				C436BD322A2A9E3100B7E400 /* BuildView.swift in Sources */,
 				C4432C802A26905A00FB0697 /* HomeView.swift in Sources */,
 				C41465F82A291B5B007A7431 /* HTTPClientDTO.swift in Sources */,

@@ -25,6 +25,22 @@ struct SideMenuView: View {
                     
                     Group {
                         VStack(alignment: .leading){
+                            
+                            NavigationLink {
+                                FavouritesView(allVersions: allVersions)
+                            } label: {
+                                HStack {
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(.yellow)
+                                        .padding(.trailing, 10)
+                                    Text(LocalizedKeys.Favourites.favouritesTitle)
+                                        .font(.system(size: 16, weight: .semibold))
+                                        .foregroundColor(Color.textColor)
+                                        .multilineTextAlignment(.leading)
+                                }
+                                .padding()
+                            }
+                            
                             NavigationLink {
                                 AboutSymbologyView()
                             } label: {
@@ -53,22 +69,6 @@ struct SideMenuView: View {
                                 }
                                 .padding()
                             }
-                            
-                            NavigationLink {
-                                FavouritesView(allVersions: allVersions)
-                            } label: {
-                                HStack {
-                                    Image(systemName: "questionmark.circle.fill")
-                                        .foregroundColor(.yellow)
-                                        .padding(.trailing, 10)
-                                    Text(LocalizedKeys.Favourites.favouritesTitle)
-                                        .font(.system(size: 16, weight: .semibold))
-                                        .foregroundColor(Color.textColor)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                .padding()
-                            }
-                            
                         }
                         .padding(.bottom, 16)
                         Spacer()

@@ -10,15 +10,12 @@ import SwiftUI
 struct HomeView: View {
     @State var viewModel = HomeViewModel()
     @Environment(\.colorScheme) var colorScheme
-    @State private var showMenu: Bool = false
-    @State private var searchText = ""
-    @State var favourites: [String] = (Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? [])
     
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack(alignment: .leading) {
-                    TextFieldSearcher(searchText: $searchText)
+                    TextFieldSearcher(searchText: $viewModel.searchText)
                     
                     Picker("", selection: $viewModel.selectedOption) {
                         ForEach(viewModel.options, id: \.self) { option in
@@ -28,7 +25,6 @@ struct HomeView: View {
                     .pickerStyle(.segmented)
                     .padding()
                     .onChange(of: viewModel.selectedOption) { _, newPickerValue in
-                        self.searchText = ""
                         viewModel.changePickerValue(newPickerValue: newPickerValue)
                     }
                     
@@ -49,27 +45,20 @@ struct HomeView: View {
                             })
                             .swipeActions {
                                 Button {
-                                    if isFavourite(version: Utils().getVersionID(version: version)) {
-                                        Utils().removeValueFromUserDefaultsArray(value: Utils().getVersionID(version: version),
-                                                                                 forKey: "favourites")
-                                        self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
-                                        print(self.favourites)
+                                    if self.viewModel.isFavourite(version: Utils().getVersionID(version: version)) {
+                                        self.viewModel.removeFavoriteVersion(version: version)
                                     } else {
-                                        Utils().updateUserDefaultsArray(withValue: Utils().getVersionID(version: version),
-                                                                        forKey: "favourites")
-                                        self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
-                                        print(self.favourites)
+                                        self.viewModel.addFavoriteVersion(version: version)
                                     }
                                 } label: {
-                                    Image(systemName: self.isFavourite(version: Utils().getVersionID(version: version)) ?
+                                    Image(systemName: self.viewModel.isFavourite(version: Utils().getVersionID(version: version)) ?
                                           "trash.fill" : "star.fill")
                                 }
-                                .tint(self.isFavourite(version: Utils().getVersionID(version: version)) ? .red : .yellow)
-                                .onChange(of: self.favourites) { _, _ in
-                                        self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
-                                    }
+                                .tint(self.viewModel.isFavourite(version: Utils().getVersionID(version: version)) ? .red : .yellow)
+                                .onChange(of: self.viewModel.favourites) { _, _ in
+                                    self.viewModel.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+                                }
                             }
-                            
                         }
                     }
                     
@@ -80,25 +69,24 @@ struct HomeView: View {
                 .navigationTitle("Xcode Releases")
                 .listStyle(.plain)
                 
-                
                 GeometryReader { _ in
                     HStack {
                         SideMenuView(allVersions: viewModel.modelView.versions)
-                            .offset(x: showMenu ? 0 : -UIScreen.main.bounds.width) // put - if left, + if right
-                            .animation(.easeInOut(duration: 0.4), value: showMenu)
+                            .offset(x: viewModel.showMenu ? 0 : -UIScreen.main.bounds.width) // put - if left, + if right
+                            .animation(.easeInOut(duration: 0.4), value: viewModel.showMenu)
                         Spacer() // to left
                     }
                     
                 }
-                .background(Color.black.opacity(showMenu ? 0.5 : 0))
+                .background(Color.black.opacity(viewModel.showMenu ? 0.5 : 0))
             }
             .toolbar {
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                     HStack {
                         Button {
-                            self.showMenu.toggle()
+                            self.viewModel.showMenu.toggle()
                         } label: {
-                            SideMenuButtonView(showMenu: showMenu)
+                            SideMenuButtonView(showMenu: viewModel.showMenu)
                         }
                     }
                 }
@@ -109,22 +97,12 @@ struct HomeView: View {
             Task {
                 await self.viewModel.onAppear()
             }
-            self.favourites = []
-            self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+            self.viewModel.updateFavoriteVersions()
         }
-        .onChange(of: self.searchText, { _, _ in
-            self.viewModel.filterSearchText(searchText: searchText)
+        .onChange(of: self.viewModel.searchText, { _, _ in
+            self.viewModel.filterSearchText(searchText: viewModel.searchText)
         })
         .loaderBase(state: self.viewModel.state)
-    }
-    
-    private func isFavourite(version: String) -> Bool {
-        return Utils().checkValueInUserDefaultsArray(value: version,
-                                                     forKey: "favourites")
-    }
-    
-    private func updateLocal() {
-        
     }
 }
 

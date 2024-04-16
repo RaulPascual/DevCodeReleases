@@ -43,10 +43,6 @@ extension View {
     func iconStyle() -> some View {
         modifier(IconStyle())
     }
-    
-    func toastView(toast: Binding<Toast?>) -> some View {
-        self.modifier(ToastModifier(toast: toast))
-    }
 }
 
 struct IconStyle: ViewModifier {
