@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 extension HomeView {
-    @Observable @MainActor  class HomeViewModel: BaseViewModel {
+    @Observable @MainActor class HomeViewModel: BaseViewModel {
         var business = HomeBusiness()
         var modelView = HomeModelView(modelBusiness: nil)
         var resultList: [VersionModel] = []
@@ -61,6 +61,7 @@ extension HomeView {
         }
         
         public func changePickerValue(newPickerValue: String) {
+            self.searchText = ""
             if newPickerValue == "All" {
                 resultList = modelView.versions
             } else if newPickerValue == "Beta" {
@@ -74,6 +75,28 @@ extension HomeView {
                 }
                 resultList = filteredVersions
             }
+        }
+        
+        public func isFavourite(version: String) -> Bool {
+            return Utils().checkValueInUserDefaultsArray(value: version,
+                                                         forKey: "favourites")
+        }
+        
+        public func removeFavoriteVersion(version: VersionModel) {
+            Utils().removeValueFromUserDefaultsArray(value: Utils().getVersionID(version: version),
+                                                     forKey: "favourites")
+            self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+        }
+        
+        public func addFavoriteVersion(version: VersionModel) {
+            Utils().updateUserDefaultsArray(withValue: Utils().getVersionID(version: version),
+                                            forKey: "favourites")
+            self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+        }
+        
+        public func updateFavoriteVersions() {
+            self.favourites = []
+            self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
         }
     }
 }

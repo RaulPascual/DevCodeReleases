@@ -25,8 +25,6 @@ struct HomeView: View {
                     .pickerStyle(.segmented)
                     .padding()
                     .onChange(of: viewModel.selectedOption) { _, newPickerValue in
-                        // TODO: - Pasar a viewModel
-                        self.viewModel.searchText = ""
                         viewModel.changePickerValue(newPickerValue: newPickerValue)
                     }
                     
@@ -47,25 +45,19 @@ struct HomeView: View {
                             })
                             .swipeActions {
                                 Button {
-                                    if isFavourite(version: Utils().getVersionID(version: version)) {
-                                        // TODO: - Pasar a viewModel
-                                        Utils().removeValueFromUserDefaultsArray(value: Utils().getVersionID(version: version),
-                                                                                 forKey: "favourites")
-                                        self.viewModel.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+                                    if self.viewModel.isFavourite(version: Utils().getVersionID(version: version)) {
+                                        self.viewModel.removeFavoriteVersion(version: version)
                                     } else {
-                                        Utils().updateUserDefaultsArray(withValue: Utils().getVersionID(version: version),
-                                                                        forKey: "favourites")
-                                        self.viewModel.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+                                        self.viewModel.addFavoriteVersion(version: version)
                                     }
                                 } label: {
-                                    Image(systemName: self.isFavourite(version: Utils().getVersionID(version: version)) ?
+                                    Image(systemName: self.viewModel.isFavourite(version: Utils().getVersionID(version: version)) ?
                                           "trash.fill" : "star.fill")
                                 }
-                                .tint(self.isFavourite(version: Utils().getVersionID(version: version)) ? .red : .yellow)
+                                .tint(self.viewModel.isFavourite(version: Utils().getVersionID(version: version)) ? .red : .yellow)
                                 .onChange(of: self.viewModel.favourites) { _, _ in
-                                    // TODO: - Pasar a viewModel
                                     self.viewModel.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
-                                    }
+                                }
                             }
                         }
                     }
@@ -76,7 +68,6 @@ struct HomeView: View {
                 }
                 .navigationTitle("Xcode Releases")
                 .listStyle(.plain)
-                
                 
                 GeometryReader { _ in
                     HStack {
@@ -106,20 +97,12 @@ struct HomeView: View {
             Task {
                 await self.viewModel.onAppear()
             }
-            // TODO: - Pasar a viewModel
-            self.viewModel.favourites = []
-            self.viewModel.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
+            self.viewModel.updateFavoriteVersions()
         }
         .onChange(of: self.viewModel.searchText, { _, _ in
             self.viewModel.filterSearchText(searchText: viewModel.searchText)
         })
         .loaderBase(state: self.viewModel.state)
-    }
-    
-    // TODO: - Pasar a viewModel
-    private func isFavourite(version: String) -> Bool {
-        return Utils().checkValueInUserDefaultsArray(value: version,
-                                                     forKey: "favourites")
     }
 }
 
