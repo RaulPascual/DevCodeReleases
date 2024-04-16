@@ -50,6 +50,7 @@
 		C4CF61E72BCEC1860085AE3C /* VersionChecksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E62BCEC1860085AE3C /* VersionChecksum.swift */; };
 		C4CF61E92BCEC1D60085AE3C /* VersionReleaseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */; };
 		C4CF61EB2BCEC2C00085AE3C /* VersionClang.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */; };
+		C4CF61ED2BCEC4730085AE3C /* OnboardViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */; };
 		C4D3F17F2A32528400FB50D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4D3F1812A32528400FB50D7 /* Localizable.strings */; };
 		C4D3F1872A32592A00FB50D7 /* LocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3F1862A32592A00FB50D7 /* LocalizedKeys.swift */; };
 		C4D3F1892A325BCD00FB50D7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3F1882A325BCD00FB50D7 /* StringExtension.swift */; };
@@ -102,6 +103,7 @@
 		C4CF61E62BCEC1860085AE3C /* VersionChecksum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionChecksum.swift; sourceTree = "<group>"; };
 		C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionReleaseNotes.swift; sourceTree = "<group>"; };
 		C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionClang.swift; sourceTree = "<group>"; };
+		C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewSection.swift; sourceTree = "<group>"; };
 		C4D3F1802A32528400FB50D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4D3F1822A32528700FB50D7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4D3F1832A32528800FB50D7 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				C4852B962A3DF429007E1AE8 /* OnboardingView.swift */,
+				C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				C4432C812A26905A00FB0697 /* HomeModelServer.swift in Sources */,
 				C4432C6C2A268EB200FB0697 /* RequestMethod.swift in Sources */,
 				C4375C862A2FB51F00F83F17 /* AboutSymbologyView.swift in Sources */,
+				C4CF61ED2BCEC4730085AE3C /* OnboardViewSection.swift in Sources */,
 				C4CF61E72BCEC1860085AE3C /* VersionChecksum.swift in Sources */,
 				C4375C842A2FB1D400F83F17 /* SideView.swift in Sources */,
 				C4432C7C2A26905A00FB0697 /* HomeBusiness.swift in Sources */,
