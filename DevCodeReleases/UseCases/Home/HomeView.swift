@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var viewModel = HomeViewModel()
     @Environment(\.colorScheme) var colorScheme
+    // TODO: - Pasar a viewModel
     @State private var showMenu: Bool = false
     @State private var searchText = ""
     @State var favourites: [String] = (Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? [])
@@ -28,6 +29,7 @@ struct HomeView: View {
                     .pickerStyle(.segmented)
                     .padding()
                     .onChange(of: viewModel.selectedOption) { _, newPickerValue in
+                        // TODO: - Pasar a viewModel
                         self.searchText = ""
                         viewModel.changePickerValue(newPickerValue: newPickerValue)
                     }
@@ -50,15 +52,14 @@ struct HomeView: View {
                             .swipeActions {
                                 Button {
                                     if isFavourite(version: Utils().getVersionID(version: version)) {
+                                        // TODO: - Pasar a viewModel
                                         Utils().removeValueFromUserDefaultsArray(value: Utils().getVersionID(version: version),
                                                                                  forKey: "favourites")
                                         self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
-                                        print(self.favourites)
                                     } else {
                                         Utils().updateUserDefaultsArray(withValue: Utils().getVersionID(version: version),
                                                                         forKey: "favourites")
                                         self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
-                                        print(self.favourites)
                                     }
                                 } label: {
                                     Image(systemName: self.isFavourite(version: Utils().getVersionID(version: version)) ?
@@ -66,10 +67,10 @@ struct HomeView: View {
                                 }
                                 .tint(self.isFavourite(version: Utils().getVersionID(version: version)) ? .red : .yellow)
                                 .onChange(of: self.favourites) { _, _ in
+                                    // TODO: - Pasar a viewModel
                                         self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
                                     }
                             }
-                            
                         }
                     }
                     
@@ -109,6 +110,7 @@ struct HomeView: View {
             Task {
                 await self.viewModel.onAppear()
             }
+            // TODO: - Pasar a viewModel
             self.favourites = []
             self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
         }
@@ -118,13 +120,10 @@ struct HomeView: View {
         .loaderBase(state: self.viewModel.state)
     }
     
+    // TODO: - Pasar a viewModel
     private func isFavourite(version: String) -> Bool {
         return Utils().checkValueInUserDefaultsArray(value: version,
                                                      forKey: "favourites")
-    }
-    
-    private func updateLocal() {
-        
     }
 }
 

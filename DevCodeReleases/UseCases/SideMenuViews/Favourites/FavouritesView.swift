@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavouritesView: View {
     var viewModel = FavouritesViewModel()
+    // TODO: - ViewModel
     var allVersions: [VersionModel]
     @State var favourites: [String] = (Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? [])
     
@@ -50,6 +51,7 @@ struct FavouritesView: View {
                                 })
                                 .swipeActions {
                                     Button {
+                                        // TODO: - Pasar a viewModel
                                         Utils().removeValueFromUserDefaultsArray(value: Utils().getVersionID(version: version),
                                                                                  forKey: "favourites")
                                         self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
@@ -58,6 +60,7 @@ struct FavouritesView: View {
                                     }
                                     .tint(.red)
                                     .onChange(of: self.favourites, { _, _ in
+                                        // TODO: - Pasar a viewModel
                                         self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
                                         viewModel.onAppear(allVersions: allVersions)
                                     })

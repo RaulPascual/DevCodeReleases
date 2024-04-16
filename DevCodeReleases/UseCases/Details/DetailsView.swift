@@ -10,7 +10,7 @@ import SwiftUI
 struct DetailsView: View {
     let version: VersionModel
     @State var showWebView = false
-    
+    // TODO: - Dividir en varias subvistas
     var body: some View {
         let xcodeVersionName = Utils().getXcodeVersionName(version: version).key
         GeometryReader { proxy in
