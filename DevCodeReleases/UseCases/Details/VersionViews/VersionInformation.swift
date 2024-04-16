@@ -25,16 +25,15 @@ struct VersionInformation: View {
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.aliceBlueColor.cornerRadius(10))
-                
+
                 Spacer()
-                
+
                 VStack {
                     Text(LocalizedKeys.Details.requires)
                     Image("macIcon")
                         .resizable()
                         .frame(width: 35, height: 35)
                     Text(version.requires ?? "")
-                    
                 }
                 .padding()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -16,32 +16,29 @@ public protocol Endpoint {
     var queryParams: [String: Any]? { get }
 }
 
-
 enum XcodeVersion {
     case currentVersions
 }
 
 extension XcodeVersion: Endpoint {
-   
     var domain: String {
         return Constants.baseURL
     }
-    
+
     var endpoint: String {
         var path = ""
 
         path = Constants.path
         return path
     }
-    
-    var queryParams: [String : Any]? {
+
+    var queryParams: [String: Any]? {
         return nil
     }
 
     var method: RequestMethod { return .get }
 
     var header: [String: String]? { return ["Content-Type": "application/json"] }
-    
-    var body: [String : Any]? { return nil }
-    
+
+    var body: [String: Any]? { return nil }
 }

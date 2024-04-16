@@ -24,9 +24,9 @@ struct VersionPublicationDate: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.aliceBlueColor.cornerRadius(10))
-            
+
             Spacer()
-        
+
             // MARK: - Build number
             VStack {
                 Text("Build")
@@ -38,9 +38,7 @@ struct VersionPublicationDate: View {
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.aliceBlueColor.cornerRadius(10))
-            
         }
         .padding()
     }
 }
-

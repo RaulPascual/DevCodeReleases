@@ -10,7 +10,7 @@ import Foundation
 struct HomeModelView {
     // Define properties
     var versions: [VersionModel] = []
-    
+
     init(modelBusiness: HomeModelBusiness?) {
         self.versions = modelBusiness?.versions ?? []
     }

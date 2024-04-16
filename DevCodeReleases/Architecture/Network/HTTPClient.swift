@@ -51,21 +51,21 @@ public class HTTPClient: NSObject {
                     throw RequestError(errorType: .decode)
                 }
                 return decodedResponse
-                
+
             case 401:
                 print("\n----- ❌ Status Code: APIError.clientErrorUnauthorized -----")
                 guard let decodedError = try? JSONDecoder().decode(errorModel, from: data) else {
                     throw RequestError(errorType: .unauthorize)
                 }
                 throw RequestError(errorType: .unauthorize, errorModel: decodedError)
-                
+
             case 400:
                 print("\n----- ❌ Status Code: APIError.clientErrorUnauthorized -----")
                 guard let decodedError = try? JSONDecoder().decode(errorModel, from: data) else {
                     throw RequestError(errorType: .badRequest)
                 }
                 throw RequestError(errorType: .badRequest, errorModel: decodedError)
-                
+
             default:
                 print("\n----- ❌  APIError.unknown -----")
                 guard let decodedError = try? JSONDecoder().decode(errorModel, from: data) else {
@@ -156,7 +156,7 @@ extension HTTPClient: URLSessionDelegate {
             certificates = (0..<SecTrustGetCertificateCount(serverTrust))
                 .compactMap { SecTrustGetCertificateAtIndex(serverTrust, $0) }
         }
-        
+
         // Políticas SSL para la verificación del nombre de dominio
         let policy = NSMutableArray()
         policy.add(SecPolicyCreateSSL(true, challenge.protectionSpace.host as CFString))

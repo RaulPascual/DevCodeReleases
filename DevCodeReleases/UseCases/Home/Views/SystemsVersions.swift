@@ -12,25 +12,24 @@ struct SystemsVersions: View {
     var extendedView: Bool
     var body: some View {
         VStack {
-            
             // MARK: - First line (iOS and macOS)
             HStack {
                 Image("iosIcon")
                     .resizable()
                     .iconStyle()
-                
+
                 if extendedView {
                     Text("iOS")
                 }
                 Text("\(version.sdks?.iOS?.last?.number ?? "")")
                     .bold(extendedView)
-                    
+
                 Spacer()
-                
+
                 Image("macIcon")
                     .resizable()
                     .iconStyle()
-                
+
                 if extendedView {
                     Text("macOS")
                 }
@@ -38,7 +37,7 @@ struct SystemsVersions: View {
                     .bold(extendedView)
             }
             .padding(.bottom, extendedView ? 16 : 4)
-            
+
             // MARK: - Second line (tvOS and watchOS)
             HStack {
                 Image("appleTVIcon")
@@ -49,9 +48,9 @@ struct SystemsVersions: View {
                 }
                 Text("\(version.sdks?.tvOS?.last?.number ?? "")")
                     .bold(extendedView)
-                
+
                 Spacer()
-                
+
                 Image("watchOSIcon")
                     .resizable()
                     .iconStyle()

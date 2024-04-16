@@ -27,7 +27,7 @@ struct TextFieldSearcher: View {
                                     .padding(8)
                             }
                         }
-                        
+
                         Image(systemName: "magnifyingglass")
                             .foregroundColor(.gray)
                             .padding(8)

@@ -5,11 +5,9 @@
 //  Created by Raul on 6/6/23.
 //
 
-
 import SwiftUI
 
 struct SideMenuView: View {
-
     @State var isAboutSheetPresented = false
     var allVersions: [VersionModel]
 
@@ -22,10 +20,9 @@ struct SideMenuView: View {
                     Rectangle()
                         .frame(height: 2)
                         .padding(.init(top: 4, leading: 0, bottom: 4, trailing: 16))
-                    
+
                     Group {
-                        VStack(alignment: .leading){
-                            
+                        VStack(alignment: .leading) {
                             NavigationLink {
                                 FavouritesView(allVersions: allVersions)
                             } label: {
@@ -40,7 +37,7 @@ struct SideMenuView: View {
                                 }
                                 .padding()
                             }
-                            
+
                             NavigationLink {
                                 AboutSymbologyView()
                             } label: {
@@ -54,7 +51,7 @@ struct SideMenuView: View {
                                 }
                                 .padding()
                             }
-                            
+
                             NavigationLink {
                                 DifferencesView()
                             } label: {

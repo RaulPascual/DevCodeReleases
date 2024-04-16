@@ -11,7 +11,7 @@ struct VersionModel: Codable, Identifiable, Hashable, Equatable {
     static func == (lhs: VersionModel, rhs: VersionModel) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     let id = UUID().uuidString
     let compilers: Compilers?
     let requires: String?

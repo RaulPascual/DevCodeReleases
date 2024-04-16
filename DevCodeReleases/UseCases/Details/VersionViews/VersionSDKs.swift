@@ -13,7 +13,7 @@ struct VersionSDKs: View {
         VStack {
             Text("SDKs")
                 .bold()
-            
+
             VStack {
                 SystemsVersions(version: version, extendedView: true)
             }
