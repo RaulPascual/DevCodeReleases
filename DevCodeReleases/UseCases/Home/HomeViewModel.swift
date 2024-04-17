@@ -23,7 +23,7 @@ extension HomeView {
             await self.getXcodeVersions()
         }
 
-        private func getXcodeVersions() async {
+        func getXcodeVersions() async {
             self.state = .loading
             do {
                 let modelBusiness = try await business.getXcodeVersions()
