@@ -17,10 +17,10 @@ enum ViewModelState: String {
     case empty
 }
 
-@Observable public class BaseViewModel {
+@Observable class BaseViewModel {
      var state: ViewModelState = .okey
      var showWarningError = false
 }
 
-public class BaseBusiness: HTTPClient {
+class BaseBusiness: HTTPClient {
 }

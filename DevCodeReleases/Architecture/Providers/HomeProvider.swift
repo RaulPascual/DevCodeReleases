@@ -18,9 +18,6 @@ class HomeProvider: BaseProvider {
 
 public struct ErrorExampleModelServer: Codable {
     let codeError: Int?
-    public init(codeError: Int? = nil) {
-        self.codeError = codeError
-    }
 }
 
 public struct EmptyModelServer: Codable {

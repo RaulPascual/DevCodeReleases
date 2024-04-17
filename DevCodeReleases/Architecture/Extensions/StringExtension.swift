@@ -8,39 +8,6 @@
 import SwiftUI
 
 extension String {
-    func getCurrentDate() -> String {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        return dateFormatter.string(from: date)
-    }
-
-    func getCurrentDateWithHour() -> String {
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return dateFormatter.string(from: date)
-    }
-
-    func pastDate(years: Int, months: Int, days: Int) -> String {
-        let monthsToAdd = -2
-        let daysToAdd = 0
-        let yearsToAdd = 0
-        let currentDate = Date()
-        var dateComponent = DateComponents()
-
-        dateComponent.month = monthsToAdd
-        dateComponent.day = daysToAdd
-        dateComponent.year = yearsToAdd
-
-        guard let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate) else {
-            return ""
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return dateFormatter.string(from: futureDate)
-    }
-
     static func localizedString(for key: String,
                                 locale: Locale = .current) -> String {
         let language = locale.language.languageCode?.identifier
@@ -51,14 +18,6 @@ extension String {
 
         let localizedString = NSLocalizedString(key, bundle: bundle, comment: "")
         return localizedString
-    }
-
-    func replaceLocalized(id: String, value: String) -> String {
-        return self.replacingOccurrences(of: "·\(id)·", with: value)
-    }
-
-    func replaceMarkdown() -> String {
-        return self.replacingOccurrences(of: "·", with: "**")
     }
 }
 
