@@ -19,9 +19,9 @@ struct TextFieldSearcher: View {
                     HStack {
                         Spacer()
                         if !searchText.isEmpty {
-                            Button(action: {
+                            Button {
                                 searchText = ""
-                            }) {
+                            } label: {
                                 Image(systemName: "xmark.circle.fill")
                                     .foregroundColor(.gray)
                                     .padding(8)

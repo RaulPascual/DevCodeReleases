@@ -51,6 +51,7 @@
 		C4CF61E92BCEC1D60085AE3C /* VersionReleaseNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */; };
 		C4CF61EB2BCEC2C00085AE3C /* VersionClang.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */; };
 		C4CF61ED2BCEC4730085AE3C /* OnboardViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */; };
+		C4CF61F02BCF0FB20085AE3C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61EF2BCF0FB20085AE3C /* Logger.swift */; };
 		C4D3F17F2A32528400FB50D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4D3F1812A32528400FB50D7 /* Localizable.strings */; };
 		C4D3F1872A32592A00FB50D7 /* LocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3F1862A32592A00FB50D7 /* LocalizedKeys.swift */; };
 		C4D3F1892A325BCD00FB50D7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D3F1882A325BCD00FB50D7 /* StringExtension.swift */; };
@@ -104,6 +105,7 @@
 		C4CF61E82BCEC1D60085AE3C /* VersionReleaseNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionReleaseNotes.swift; sourceTree = "<group>"; };
 		C4CF61EA2BCEC2C00085AE3C /* VersionClang.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionClang.swift; sourceTree = "<group>"; };
 		C4CF61EC2BCEC4730085AE3C /* OnboardViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewSection.swift; sourceTree = "<group>"; };
+		C4CF61EF2BCF0FB20085AE3C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		C4D3F1802A32528400FB50D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4D3F1822A32528700FB50D7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C4D3F1832A32528800FB50D7 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				C4D3F17C2A3251FB00FB50D7 /* Translations */,
 				C4432C732A26900D00FB0697 /* Constants.swift */,
 				C436BD2A2A2A936D00B7E400 /* Utils.swift */,
+				C4CF61EF2BCF0FB20085AE3C /* Logger.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -378,7 +381,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					C427E3F32A21549E007BC769 = {
 						CreatedOnToolsVersion = 14.3;
@@ -424,6 +427,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C4CF61EE2BCEFA210085AE3C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -487,6 +491,7 @@
 				C4432C972A26944800FB0697 /* LoaderView.swift in Sources */,
 				C40BC7AB2ACECC0A00550EBF /* WebView.swift in Sources */,
 				C4432C7E2A26905A00FB0697 /* HomeModelBusiness.swift in Sources */,
+				C4CF61F02BCF0FB20085AE3C /* Logger.swift in Sources */,
 				C427E3F82A21549E007BC769 /* XcodeReleasesApp.swift in Sources */,
 				C4D3F18B2A326C2D00FB50D7 /* DifferencesView.swift in Sources */,
 				C4432C932A2693E700FB0697 /* ColorExtension.swift in Sources */,
@@ -516,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -577,6 +583,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

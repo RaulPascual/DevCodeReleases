@@ -46,28 +46,28 @@ public class HTTPClient: NSObject {
             self.log(title: "DATA ENCODING", info: String(data: data, encoding: .utf8) ?? "")
             switch response.statusCode {
             case 200...299:
-                print("\n----- ✅ Status Code: \(response.statusCode) -----")
+                Logger.log("\n----- ✅ Status Code: \(response.statusCode) -----")
                 guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
                     throw RequestError(errorType: .decode)
                 }
                 return decodedResponse
 
             case 401:
-                print("\n----- ❌ Status Code: APIError.clientErrorUnauthorized -----")
+                Logger.log("\n----- ❌ Status Code: APIError.clientErrorUnauthorized -----")
                 guard let decodedError = try? JSONDecoder().decode(errorModel, from: data) else {
                     throw RequestError(errorType: .unauthorize)
                 }
                 throw RequestError(errorType: .unauthorize, errorModel: decodedError)
 
             case 400:
-                print("\n----- ❌ Status Code: APIError.clientErrorUnauthorized -----")
+                Logger.log("\n----- ❌ Status Code: APIError.clientErrorUnauthorized -----")
                 guard let decodedError = try? JSONDecoder().decode(errorModel, from: data) else {
                     throw RequestError(errorType: .badRequest)
                 }
                 throw RequestError(errorType: .badRequest, errorModel: decodedError)
 
             default:
-                print("\n----- ❌  APIError.unknown -----")
+                Logger.log("\n----- ❌  APIError.unknown -----")
                 guard let decodedError = try? JSONDecoder().decode(errorModel, from: data) else {
                     throw RequestError(errorType: .unexpectedStatusCode(response.statusCode))
                 }
@@ -125,9 +125,9 @@ public class HTTPClient: NSObject {
     // Show logs only if is specified by log.
     private func log(title: String, info: Any) {
         if dto.showLog {
-            print("\n----- 🚦START \(title.uppercased()) 🚦-----")
-            print(info)
-            print("\n----- 🚦END \(title.uppercased()) 🚦 -----")
+            Logger.log("\n----- 🚦START \(title.uppercased()) 🚦-----")
+            Logger.log(info)
+            Logger.log("\n----- 🚦END \(title.uppercased()) 🚦 -----")
         }
     }
 }

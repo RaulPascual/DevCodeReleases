@@ -40,7 +40,8 @@ extension HomeView {
                 Task {
                     await self.onAppear()
                 }
-                print("Error \(error)")
+                
+                Logger.log("Error \(error)")
             }
         }
 

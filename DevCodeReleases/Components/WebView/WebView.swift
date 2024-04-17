@@ -10,13 +10,16 @@ import UIKit
 import SwiftUI
 
 struct WebView: UIViewRepresentable {
-    @State var url: String // 1
+    @State var url: String
 
     func makeUIView(context: Context) -> some UIView {
-        let webView = WKWebView(frame: .zero) // 2
-        webView.load(URLRequest(url: URL(string: url)!)) // 3
+        let webView = WKWebView(frame: .zero)
+        if let url = URL(string: url) {
+            webView.load(URLRequest(url: url))
+        }
+        
         return webView
     }
 
-    func updateUIView(_ uiView: UIViewType, context: Context) {} // 4
+    func updateUIView(_ uiView: UIViewType, context: Context) {}
 }
