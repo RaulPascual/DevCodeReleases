@@ -15,14 +15,14 @@ extension HomeView {
         var resultList: [VersionModel] = []
         var selectedOption = "All"
         let options = ["All", "Beta", "Release"]
-        var showMenu: Bool = false
+        var showMenu = false
         var searchText = ""
         var favourites: [String] = (Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? [])
-        
+
         func onAppear() async {
             await self.getXcodeVersions()
         }
-        
+
         private func getXcodeVersions() async {
             self.state = .loading
             do {
@@ -40,11 +40,12 @@ extension HomeView {
                 Task {
                     await self.onAppear()
                 }
-                print("Error \(error)")
+                
+                Logger.log("Error \(error)")
             }
         }
-        
-        public func filterSearchText(searchText: String) {
+
+        func filterSearchText(searchText: String) {
             if searchText.isEmpty {
                 self.resultList = modelView.versions
             } else {
@@ -59,8 +60,8 @@ extension HomeView {
                 self.resultList = filteredVersions
             }
         }
-        
-        public func changePickerValue(newPickerValue: String) {
+
+        func changePickerValue(newPickerValue: String) {
             self.searchText = ""
             if newPickerValue == "All" {
                 resultList = modelView.versions
@@ -76,25 +77,25 @@ extension HomeView {
                 resultList = filteredVersions
             }
         }
-        
-        public func isFavourite(version: String) -> Bool {
+
+        func isFavourite(version: String) -> Bool {
             return Utils().checkValueInUserDefaultsArray(value: version,
                                                          forKey: "favourites")
         }
-        
-        public func removeFavoriteVersion(version: VersionModel) {
+
+        func removeFavoriteVersion(version: VersionModel) {
             Utils().removeValueFromUserDefaultsArray(value: Utils().getVersionID(version: version),
                                                      forKey: "favourites")
             self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
         }
-        
-        public func addFavoriteVersion(version: VersionModel) {
+
+        func addFavoriteVersion(version: VersionModel) {
             Utils().updateUserDefaultsArray(withValue: Utils().getVersionID(version: version),
                                             forKey: "favourites")
             self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
         }
-        
-        public func updateFavoriteVersions() {
+
+        func updateFavoriteVersions() {
             self.favourites = []
             self.favourites = Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? []
         }

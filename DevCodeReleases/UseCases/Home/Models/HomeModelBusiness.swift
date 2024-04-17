@@ -10,7 +10,7 @@ import Foundation
 class HomeModelBusiness {
     // Define properties
     var versions: [VersionModel] = []
-    
+
     init(modelServer: HomeModelServer?) {
         modelServer?.forEach({ version in
             versions.append(version)

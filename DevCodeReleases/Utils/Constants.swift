@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Constants {
+enum Constants {
     static let baseURL = "https://xcodereleases.com/"
     static let path = "data.json"
 }

@@ -1,0 +1,172 @@
+# REFERENCE: https://realm.github.io/SwiftLint/rule-directory.html
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+ - Pods
+#  - UITests
+
+included:
+#   - ../SDKs/DevelopmentPod1
+disabled_rules:
+  - file_types_order # Specifies how the types within a file should be ordered.
+  - trailing_whitespace # Lines should not have trailing whitespace
+
+opt_in_rules:
+# A
+  - array_init # Prefer using Array(seq) over seq.map { $0 } to convert a sequence into an Array.
+# B
+  - blanket_disable_command # swiftlint:disable commands should be re-enabled before the end of the file
+# C
+ #∫ - closure_body_length # Closure bodies should not span too many lines. [NG] foo.bar(label: ↓{ toto in
+  - closure_end_indentation # Closure end should have the same indentation as the line that started it.
+  - closure_spacing # Closure expressions should have a single space inside each brace. [NG] [].map(↓{$0}), filter ↓{ sorted ↓{ $0 < $1}}
+  - collection_alignment # All elements in a collection literal should be vertically aligned
+  - computed_accessors_order # Getter and setters in computed properties and subscripts should be in a consistent order. Enabled by default.
+  - conditional_returns_on_newline # Conditional statements should always return on the next line
+  - contains_over_filter_is_empty # Prefer contains over using filter(where:).isEmpty
+  - contains_over_filter_count # Prefer contains over comparing filter(where:).count to 0.
+  - contains_over_first_not_nil # Prefer contains over first(where:) != nil and firstIndex(where:) != nil
+  - contains_over_range_nil_comparison # Prefer contains over range(of:) != nil and range(of:) == nil
+  - convenience_type # Types used for hosting only static members should be implemented as a caseless enum to avoid instantiation.
+# D
+  - discouraged_object_literal # Prefer initializers over object literals. [NG] let image = ↓#imageLiteral(resourceName: "image.jpg")
+# E
+  - empty_count # Prefer checking isEmpty over comparing count to zero.
+  - empty_string # Prefer checking isEmpty over comparing string to an empty string literal.
+  - empty_xctest_method # Empty XCTest method should be avoided.
+  - enum_case_associated_values_count # Number of associated values in an enum case should be low [NG]
+# F
+  - fallthrough # Fallthrough should be avoided.
+  - fatal_error_message # A fatalError call should have a message
+  - file_name_no_space # File name should not contain any whitespace.
+  - first_where # Prefer using .first(where:) over .filter { }.first in collections.
+  - flatmap_over_map_reduce # Prefer flatMap over map followed by reduce([], +)
+  - force_try # Force tries should be avoided
+  - force_unwrapping # Force unwrapping should be avoided. [NG] let url = NSURL(string: "http://www.google.com")↓!
+# G
+  - generic_type_name # Generic type name should only contain alphanumeric characters, start with an uppercase character and span between 1 and 20 characters in length.
+# I
+  - identical_operands # Comparing two identical operands is likely a mistake.
+  - implicitly_unwrapped_optional # Implicitly unwrapped optionals should be avoided when possible.
+# J
+  - joined_default_parameter # Discouraged explicit usage of the default separator. [NG] let foo = bar.joined(↓separator: "")
+# L
+  - last_where # Prefer using .last(where:) over .filter { }.last in collections.
+  - legacy_multiple # Prefer using the isMultiple(of:) function instead of using the remainder operator (%).
+  - legacy_random # Prefer using type.random(in:) over legacy functions. [NG] ↓arc4random(10)
+  - literal_expression_end_indentation # Array and dictionary literal end should have the same indentation as the line that started it.
+  - lower_acl_than_parent # Ensure definitions have a lower access control level than their enclosing parent
+# M
+  - multiline_function_chains # Chained function calls should be either on the same line, or one per line.
+# N
+  - nimble_operator # Prefer Nimble operator overloads over free matcher functions.
+  - no_extension_access_modifier # Prefer not to use extension access modifiers
+ # - number_separator # Underscores should be used as thousand separator in large decimal numbers.
+# O
+  - operator_usage_whitespace # Operators should be surrounded by a single whitespace when they are being used.
+  - overridden_super_call # Some overridden methods should always call super
+# P
+  - pattern_matching_keywords # Combine multiple pattern matching bindings by moving keywords out of tuples.
+  - prefer_self_type_over_type_of_self # Prefer Self over type(of: self) when accessing properties or calling methods.
+  - private_action # IBActions should be private. [NG] @IBAction ↓func barButtonTapped(_ sender: UIButton) {}
+  - private_outlet # IBOutlets should be private to avoid leaking UIKit to higher layers. [NG] @IBOutlet ↓var label: UILabel?
+# R
+  - redundant_optional_initialization # Initializing an optional variable with nil is redundant. [NG] var myVar: Int?↓ = nil
+  - redundant_nil_coalescing # nil coalescing operator is only evaluated if the lhs is nil, coalescing operator with nil as rhs is redundant
+  - redundant_set_access_control # Property setter access level shouldn’t be explicit if it’s the same as the variable access level.
+  - redundant_type_annotation # Variables should not have redundant type annotations [NG] var url↓:URL=URL()
+# S
+  - single_test_class # Test files should contain a single QuickSpec or XCTestCase class.
+  - sorted_first_last # Prefer using min() or max() over sorted().first or sorted().last
+  - switch_case_on_newline # Cases inside a switch should always be on a newline
+# T
+  - toggle_bool # Prefer someBool.toggle() over someBool = !someBool.
+# U
+  - unowned_variable_capture # Prefer capturing references as weak to avoid potential crashes.
+# V
+  - vertical_whitespace_between_cases # Include a single empty line between switch cases
+  - vertical_whitespace_closing_braces # Don’t include vertical whitespace (empty line) before closing braces.
+  - vertical_whitespace_opening_braces # Don’t include vertical whitespace (empty line) after opening braces.
+# W
+  - weak_delegate # Delegates should be weak to avoid reference cycles
+# Y
+  - yoda_condition # The variable should be placed on the left, the constant on the right of a comparison operator.
+  
+custom_rules:
+  disable_print:
+    included: ".*\\.swift"
+    name: "Writing log messages directly to standard out is disallowed"
+    regex: "(\\bprint|\\bdebugPrint|\\bdump|Swift\\.print|Swift\\.debugPrint|Swift\\.dump)\\s*\\("
+    message: "Don't commit `print(…)`, `debugPrint(…)`, or `dump(…)` as they write to standard out in release. Either log to a dedicated logging system or silence this warning in debug-only scenarios explicitly using `// swiftlint:disable:next disable_print`"
+    severity: warning
+  
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+  - capture_variable # Non-constant variables should not be listed in a closure’s capture list to avoid confusion about closures capturing variables at creation time
+  - explicit_self # Instance variables and functions should be explicitly accessed with ‘self.’.
+  - typesafe_array_init # Prefer using Array(seq) over seq.map { $0 } to convert a sequence into an Array
+  - unused_declaration # Declarations should be referenced at least once within all files linted.
+  - unused_import # All imported modules should be required to make the file compile.
+  
+
+    
+empty_string: error
+force_cast: error          # [NG] as!
+# force_unwrapping: error    # [NG] value!
+  # excluded
+    # - MyVodafone/Business/Service/dashboard/VFTariffService.swift
+indentation: 4
+# indentation_width: 4
+file_length:
+ - 500 #500
+ - 1200 #1200
+large_tuple: # Tuples shouldn’t have too many members. Create a custom type instead.
+ - 3 #5
+ - 4 #6
+
+line_length:
+  warning: 150
+  error: 200
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+cyclomatic_complexity:
+  - 10
+  - 30
+
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 55
+    error: 65
+  excluded: # excluded via string
+    - iPhone
+    - Err
+    - WCS
+  # allowed_symbols: ["_"] # these are allowed in type names
+identifier_name:
+  min_length: # only min_length
+    error: 3 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
+
+# Setup:
+# Select your target and add a new script pashe
+# Unselect the options but 'Show environment variables in build log'
+# Paste the following script:
+#
+# if [[ "$(uname -m)" == arm64 ]]; then
+#     export PATH="/opt/homebrew/bin:$PATH"
+# fi
+#
+# if which swiftlint > /dev/null; then
+#   swiftlint --fix && swiftlint
+# else
+#   echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+# fi
+#
+# swiftlint --fix will correct certain styling warnings.
+# If you don't want to apply this, the line will be just: swiftlint (remove 'swiftlint --fix'

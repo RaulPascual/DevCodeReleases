@@ -9,20 +9,20 @@ import SwiftUI
 
 struct VersionClang: View {
     let version: VersionModel
-    
+
     var body: some View {
         VStack {
             Text("Clang")
                 .bold()
             VStack(alignment: .leading) {
                 HStack {
-                    VStack() {
+                    VStack {
                         HStack {
                             Text(version.compilers?.clang?.last?.number ?? "")
                                 .multilineTextAlignment(.leading)
                                 .bold()
                         }
-                        
+
                         HStack {
                             Image("hammerIcon")
                                 .resizable()

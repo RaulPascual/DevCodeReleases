@@ -16,7 +16,7 @@ struct DateView: View {
             Image("calendarIcon")
                 .resizable()
                 .iconStyle()
-            
+
             Text(Utils().formatDate(day: version.date?.day ?? 0,
                                     month: version.date?.month ?? 0,
                                     year: version.date?.year ?? 0,

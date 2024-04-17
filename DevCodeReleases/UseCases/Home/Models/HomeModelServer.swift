@@ -11,7 +11,7 @@ struct VersionModel: Codable, Identifiable, Hashable, Equatable {
     static func == (lhs: VersionModel, rhs: VersionModel) -> Bool {
         lhs.id == rhs.id
     }
-    
+
     let id = UUID().uuidString
     let compilers: Compilers?
     let requires: String?
@@ -78,6 +78,7 @@ struct Version: Codable {
 }
 
 // MARK: - VersionRelease
+// swiftlint: disable identifier_name
 struct VersionRelease: Codable {
     let rc: Int?
     let release: Bool?
@@ -85,7 +86,7 @@ struct VersionRelease: Codable {
     let gm: Bool?
     let gmSeed, dp: Int?
 }
-
+// swiftlint: enable identifier_name
 typealias HomeModelServer = [VersionModel]
 
 extension VersionModel {

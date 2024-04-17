@@ -24,22 +24,22 @@ public enum RequestErrorType: Error {
         switch self {
         case .decode:
             return "Decode error"
-            
+
         case .unauthorize:
             return "Session expired"
-            
+
         case .invalidURL:
             return "Invalid URL"
-            
+
         case .noResponse:
             return "No Response"
-            
+
         case .badRequest:
             return "Bad Request"
-            
+
         case .unexpectedStatusCode:
             return "Unexpected Status Code"
-            
+
         case .unknown:
             return "Unkwown"
         }

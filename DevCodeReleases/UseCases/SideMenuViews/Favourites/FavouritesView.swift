@@ -11,7 +11,7 @@ struct FavouritesView: View {
     var viewModel = FavouritesViewModel()
     var allVersions: [VersionModel]
     @State var favourites: [String] = (Utils().getUserDefaultsArrayValues(forKey: "favourites") ?? [])
-    
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,11 +20,10 @@ struct FavouritesView: View {
                     Group {
                         Text(LocalizedKeys.Favourites.favouritesEmpty)
                             .customFont(size: 20)
-                            
-                        
+
                         Text(LocalizedKeys.Favourites.favouritesInstructions)
                             .customFont(size: 18)
-                            
+
                         Image("emptyStateIcon")
                             .resizable()
                             .frame(width: 200, height: 200)

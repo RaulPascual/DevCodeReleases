@@ -16,14 +16,14 @@ struct DifferencesView: View {
                     .padding()
                 Text(LocalizedKeys.Menu.realaseExplanation)
                 Divider()
-                
+
                 Text("Release Candidate (RC)")
                     .font(.system(size: 22))
                     .padding()
-                
+
                 Text(LocalizedKeys.Menu.rcExplanation)
                 Divider()
-                
+
                 Text("Beta")
                     .font(.system(size: 22))
                     .padding()

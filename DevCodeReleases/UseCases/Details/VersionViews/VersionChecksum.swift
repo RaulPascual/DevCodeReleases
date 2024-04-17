@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VersionChecksum: View {
     let version: VersionModel
-    
+
     var body: some View {
         VStack {
             Text("Checksum")

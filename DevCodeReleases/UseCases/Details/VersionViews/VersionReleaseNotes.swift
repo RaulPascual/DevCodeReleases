@@ -11,7 +11,7 @@ struct VersionReleaseNotes: View {
     let version: VersionModel
     let proxy: GeometryProxy
     @Binding var showWebView: Bool
-    
+
     var body: some View {
         VStack {
             Button {

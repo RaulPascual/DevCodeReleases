@@ -14,7 +14,7 @@ struct BuildView: View {
             Image("hammerIcon")
                 .resizable()
                 .iconStyle()
-            
+
             Text("Build")
             Text("\(version.version?.build ?? "")")
         }

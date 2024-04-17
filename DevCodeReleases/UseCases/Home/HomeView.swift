@@ -10,13 +10,13 @@ import SwiftUI
 struct HomeView: View {
     @State var viewModel = HomeViewModel()
     @Environment(\.colorScheme) var colorScheme
-    
+
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack(alignment: .leading) {
                     TextFieldSearcher(searchText: $viewModel.searchText)
-                    
+
                     Picker("", selection: $viewModel.selectedOption) {
                         ForEach(viewModel.options, id: \.self) { option in
                             Text(option)
@@ -27,7 +27,7 @@ struct HomeView: View {
                     .onChange(of: viewModel.selectedOption) { _, newPickerValue in
                         viewModel.changePickerValue(newPickerValue: newPickerValue)
                     }
-                    
+
                     List {
                         ForEach(viewModel.resultList, id: \.self) { version in
                             NavigationLink(destination: {
@@ -61,14 +61,13 @@ struct HomeView: View {
                             }
                         }
                     }
-                    
                 }
                 .navigationDestination(for: VersionModel.self) { version in
                     DetailsView(version: version)
                 }
                 .navigationTitle("Xcode Releases")
                 .listStyle(.plain)
-                
+
                 GeometryReader { _ in
                     HStack {
                         SideMenuView(allVersions: viewModel.modelView.versions)
@@ -76,7 +75,6 @@ struct HomeView: View {
                             .animation(.easeInOut(duration: 0.4), value: viewModel.showMenu)
                         Spacer() // to left
                     }
-                    
                 }
                 .background(Color.black.opacity(viewModel.showMenu ? 0.5 : 0))
             }
