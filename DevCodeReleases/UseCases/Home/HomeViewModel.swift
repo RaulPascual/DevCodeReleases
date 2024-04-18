@@ -44,12 +44,6 @@ extension HomeView {
                 Logger.log("Error \(error)")
             }
             
-            print("---------------------")
-            if let model = modelView.versions.first {
-                print(model)
-            }
-            print("---------------------")
-            
             // Widget
             self.saveStructToUserDefaults(modelView.versions.last, forKey: "lastVersion", suiteName: "group.devcodereleases")
         }

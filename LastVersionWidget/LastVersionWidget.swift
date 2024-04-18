@@ -107,7 +107,18 @@ struct LastVersionWidgetViewSystemMedium: View {
     var entry: Provider.Entry
     var body: some View {
         VStack {
-            Text(entry.name ?? "")
+                VersionView(version: VersionModel(compilers: entry.compilers,
+                                                  requires: entry.requires,
+                                                  date: entry.versionDate,
+                                                  links: nil,
+                                                  version: entry.version,
+                                                  sdks: nil,
+                                                  name: entry.name,
+                                                  checksums: nil))
+            
+            
+            
+            Spacer()
         }
     }
 }

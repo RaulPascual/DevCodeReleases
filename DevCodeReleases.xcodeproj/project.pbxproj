@@ -47,6 +47,7 @@
 		C469BD6E2BD16A7D004C36AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C469BD6D2BD16A7D004C36AA /* Assets.xcassets */; };
 		C469BD722BD16A7D004C36AA /* LastVersionWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C469BD622BD16A7D004C36AA /* LastVersionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C469BD772BD19201004C36AA /* HomeModelServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4432C7B2A26905A00FB0697 /* HomeModelServer.swift */; };
+		C469BD792BD1B79D004C36AA /* VersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C436BD2D2A2A9B4800B7E400 /* VersionView.swift */; };
 		C4852B9C2A3DF429007E1AE8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852B962A3DF429007E1AE8 /* OnboardingView.swift */; };
 		C495357B2A2B40D5008F391A /* SystemsVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C495357A2A2B40D5008F391A /* SystemsVersions.swift */; };
 		C49535872A2B44E2008F391A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49535812A2B44E2008F391A /* DetailsView.swift */; };
@@ -666,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C469BD6C2BD16A7D004C36AA /* LastVersionWidget.swift in Sources */,
+				C469BD792BD1B79D004C36AA /* VersionView.swift in Sources */,
 				C469BD772BD19201004C36AA /* HomeModelServer.swift in Sources */,
 				C469BD6A2BD16A7D004C36AA /* LastVersionWidgetBundle.swift in Sources */,
 			);
