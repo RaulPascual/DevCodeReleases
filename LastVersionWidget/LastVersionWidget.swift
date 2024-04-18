@@ -20,7 +20,7 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         var entries: [LatestVersionEntry] = []
-        let object = self.loadStructFromUserDefaults(VersionModel.self, forKey: "nextRace",
+        let object = self.loadStructFromUserDefaults(VersionModel.self, forKey: "lastVersion",
                                                      suiteName: "group.devcodereleases")
         let currentDate = Date()
         let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()
@@ -67,13 +67,57 @@ struct LatestVersionEntry: TimelineEntry {
 
 struct LastVersionWidgetEntryView: View {
     var entry: Provider.Entry
+    @Environment(\.widgetFamily) var family
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
 
-            Text(entry.name ?? "nada")
+        switch family {
+        case .systemSmall:
+            // MARK: - Small
+            LastVersionWidgetViewSystemSmall(entry: entry)
+
+        case .systemMedium:
+            // MARK: - Medium
+            LastVersionWidgetViewSystemMedium(entry: entry)
+
+        case .systemLarge:
+            // MARK: - Large
+            LastVersionWidgetViewSystemLarge(entry: entry)
+
+        case .systemExtraLarge, .accessoryCorner, .accessoryCircular, .accessoryInline, .accessoryRectangular:
+            EmptyView()
+        @unknown default:
+            EmptyView()
+        }
+    }
+}
+
+// MARK: Small
+struct LastVersionWidgetViewSystemSmall: View {
+    var entry: Provider.Entry
+    var body: some View {
+        VStack {
+            Text(entry.name ?? "")
+        }
+    }
+}
+
+// MARK: Medium
+struct LastVersionWidgetViewSystemMedium: View {
+    var entry: Provider.Entry
+    var body: some View {
+        VStack {
+            Text(entry.name ?? "")
+        }
+    }
+}
+
+// MARK: Large
+struct LastVersionWidgetViewSystemLarge: View {
+    var entry: Provider.Entry
+    var body: some View {
+        VStack {
+            Text(entry.name ?? "")
         }
     }
 }
@@ -85,15 +129,16 @@ struct LastVersionWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 LastVersionWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
+                    .containerBackground(.blue.opacity(0.3), for: .widget)
             } else {
                 LastVersionWidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.blue.opacity(0.3))
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Last version")
+        .description("Shows the last version available")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
@@ -104,19 +149,37 @@ struct LastVersionWidget: Widget {
 }
 
 let versionEntryExample = LatestVersionEntry(date: Date.now,
-                                             compilers: Compilers(clang: nil,
-                                                                  swift: nil,
-                                                                  llvm: nil,
-                                                                  llvmGCC: nil,
-                                                                  gcc: nil),
+                                             compilers: Compilers(
+                                                clang: [
+                                                    Clang(
+                                                        number: "15.0.0",
+                                                        build: "1500.3.9.4",
+                                                        release: ClangRelease(release: true)
+                                                    )
+                                                ],
+                                                swift: [
+                                                    Clang(
+                                                        number: "5.10",
+                                                        build: "5.10.0.13",
+                                                        release: ClangRelease(release: true)
+                                                    )
+                                                ],
+                                                llvm: nil,
+                                                llvmGCC: nil,
+                                                gcc: nil
+                                             ),
                                              requires: "14.0",
                                              versionDate: DateClass(year: 2024, month: 04, day: 16),
-                                             version: Version(number: "15.4",
-                                                              build: "15F5021i",
-                                                              release: VersionRelease(rc: nil,
-                                                                                      release: nil,
-                                                                                      beta: 1,
-                                                                                      gm: nil,
-                                                                                      gmSeed: nil,
-                                                                                      dp: nil)),
-                                             name: "15.4")
+                                             version: Version(
+                                                number: "15.4",
+                                                build: "15F5021i",
+                                                release: VersionRelease(
+                                                    rc: nil,
+                                                    release: nil,
+                                                    beta: 1,
+                                                    gm: nil,
+                                                    gmSeed: nil,
+                                                    dp: nil
+                                                )
+                                             ),
+                                             name: "Xcode")

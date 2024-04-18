@@ -142,6 +142,7 @@
 		C469BD6B2BD16A7D004C36AA /* LastVersionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastVersionWidget.swift; sourceTree = "<group>"; };
 		C469BD6D2BD16A7D004C36AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C469BD6F2BD16A7D004C36AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C469BD782BD19FD5004C36AA /* LastVersionWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LastVersionWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C4852B962A3DF429007E1AE8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C495357A2A2B40D5008F391A /* SystemsVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsVersions.swift; sourceTree = "<group>"; };
 		C49535812A2B44E2008F391A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 		C427E3EB2A21549E007BC769 = {
 			isa = PBXGroup;
 			children = (
+				C469BD782BD19FD5004C36AA /* LastVersionWidgetExtension.entitlements */,
 				C427E3F62A21549E007BC769 /* DevCodeReleases */,
 				C4EA37AA2BD044AA004D4B1F /* DevCodeReleasesTests */,
 				C469BD682BD16A7D004C36AA /* LastVersionWidget */,
@@ -920,6 +922,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LastVersionWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R3G648C4QW;
@@ -952,6 +955,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LastVersionWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R3G648C4QW;

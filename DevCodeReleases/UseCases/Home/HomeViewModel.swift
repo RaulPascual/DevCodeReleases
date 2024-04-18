@@ -44,7 +44,14 @@ extension HomeView {
                 Logger.log("Error \(error)")
             }
             
-            self.saveStructToUserDefaults(modelView.versions.last, forKey: "group.devcodereleases")
+            print("---------------------")
+            if let model = modelView.versions.first {
+                print(model)
+            }
+            print("---------------------")
+            
+            // Widget
+            self.saveStructToUserDefaults(modelView.versions.last, forKey: "lastVersion", suiteName: "group.devcodereleases")
         }
         
         func saveStructToUserDefaults<T: Codable>(_ value: T, forKey key: String, suiteName: String? = nil) {
