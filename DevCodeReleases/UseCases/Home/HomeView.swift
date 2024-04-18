@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct HomeView: View {
     @State var viewModel = HomeViewModel()
@@ -96,6 +97,7 @@ struct HomeView: View {
                 await self.viewModel.onAppear()
             }
             self.viewModel.updateFavoriteVersions()
+            WidgetCenter.shared.reloadAllTimelines()
         }
         .onChange(of: self.viewModel.searchText, { _, _ in
             self.viewModel.filterSearchText(searchText: viewModel.searchText)
