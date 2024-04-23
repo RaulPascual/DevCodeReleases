@@ -43,7 +43,24 @@ extension HomeView {
                 
                 Logger.log("Error \(error)")
             }
+            
+            // Widget
+            self.saveStructToUserDefaults(modelView.versions.first, forKey: "lastVersion", suiteName: "group.devcodereleases")
         }
+        
+        func saveStructToUserDefaults<T: Codable>(_ value: T, forKey key: String, suiteName: String? = nil) {
+                let encoder = JSONEncoder()
+
+                if let encoded = try? encoder.encode(value) {
+                    let userDefaults: UserDefaults
+                    if let suiteName = suiteName {
+                        userDefaults = UserDefaults(suiteName: suiteName) ?? UserDefaults.standard
+                    } else {
+                        userDefaults = UserDefaults.standard
+                    }
+                    userDefaults.set(encoded, forKey: key)
+                }
+            }
 
         func filterSearchText(searchText: String) {
             if searchText.isEmpty {
