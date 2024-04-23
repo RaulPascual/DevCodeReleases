@@ -45,7 +45,7 @@ extension HomeView {
             }
             
             // Widget
-            self.saveStructToUserDefaults(modelView.versions.last, forKey: "lastVersion", suiteName: "group.devcodereleases")
+            self.saveStructToUserDefaults(modelView.versions.first, forKey: "lastVersion", suiteName: "group.devcodereleases")
         }
         
         func saveStructToUserDefaults<T: Codable>(_ value: T, forKey key: String, suiteName: String? = nil) {

@@ -30,7 +30,8 @@ struct Provider: TimelineProvider {
                                        requires: object?.requires,
                                        versionDate: object?.date,
                                        version: object?.version,
-                                       name: object?.name)
+                                       name: object?.name,
+                                       sdks: object?.sdks)
         entries.append(entry)
 
         let timeline = Timeline(entries: entries, policy: .after(nextUpdateDate))
@@ -63,6 +64,7 @@ struct LatestVersionEntry: TimelineEntry {
     let versionDate: DateClass?
     let version: Version?
     let name: String?
+    let sdks: Sdks?
 }
 
 struct LastVersionWidgetEntryView: View {
@@ -96,8 +98,49 @@ struct LastVersionWidgetEntryView: View {
 struct LastVersionWidgetViewSystemSmall: View {
     var entry: Provider.Entry
     var body: some View {
+        let version = VersionModel(compilers: entry.compilers,
+                                   requires: entry.requires,
+                                   date: entry.versionDate,
+                                   links: nil,
+                                   version: entry.version,
+                                   sdks: nil,
+                                   name: entry.name,
+                                   checksums: nil)
         VStack {
-            Text(entry.name ?? "")
+            HStack {
+                Image("xcodeIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                Text(version.version?.number ?? "")
+                    .bold()
+
+                Spacer()
+            }
+
+            HStack {
+                Image("calendarIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+
+                Text(Utils().formatDate(day: version.date?.day ?? 0,
+                                        month: version.date?.month ?? 0,
+                                        year: version.date?.year ?? 0,
+                                        dateStyle: .short))
+                Spacer()
+            }
+
+            HStack {
+                Image("swiftIcon")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+
+                Text(version.compilers?.swift?.last?.number ?? "")
+
+                Spacer()
+            }
+
         }
     }
 }
@@ -106,19 +149,50 @@ struct LastVersionWidgetViewSystemSmall: View {
 struct LastVersionWidgetViewSystemMedium: View {
     var entry: Provider.Entry
     var body: some View {
+        let version = VersionModel(compilers: entry.compilers,
+                                   requires: entry.requires,
+                                   date: entry.versionDate,
+                                   links: nil,
+                                   version: entry.version,
+                                   sdks: nil,
+                                   name: entry.name,
+                                   checksums: nil)
         VStack {
-                VersionView(version: VersionModel(compilers: entry.compilers,
-                                                  requires: entry.requires,
-                                                  date: entry.versionDate,
-                                                  links: nil,
-                                                  version: entry.version,
-                                                  sdks: nil,
-                                                  name: entry.name,
-                                                  checksums: nil))
-            
-            
-            
-            Spacer()
+            VersionView(version: version)
+
+            HStack {
+                Image("calendarIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 30, height: 30)
+
+                Text(Utils().formatDate(day: version.date?.day ?? 0,
+                                        month: version.date?.month ?? 0,
+                                        year: version.date?.year ?? 0,
+                                        dateStyle: .full))
+                Spacer()
+            }
+
+            HStack {
+                HStack {
+                    Image("swiftIcon")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+
+                    Text(version.compilers?.swift?.last?.number ?? "")
+                }
+
+                Spacer()
+
+                HStack {
+                    Image("iosIcon")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+
+                    Text("\(version.sdks?.iOS?.last?.number ?? "-")")
+                        .bold(true)
+                }
+            }
         }
     }
 }
@@ -149,7 +223,7 @@ struct LastVersionWidget: Widget {
         }
         .configurationDisplayName("Last version")
         .description("Shows the last version available")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
@@ -193,4 +267,12 @@ let versionEntryExample = LatestVersionEntry(date: Date.now,
                                                     dp: nil
                                                 )
                                              ),
-                                             name: "Xcode")
+                                             name: "Xcode",
+                                             sdks: Sdks(macOS: [Clang(number: "14.5",
+                                                                      build: "",
+                                                                      release: nil)],
+                                                        tvOS: nil,
+                                                        iOS: [Clang(number: "17.5",
+                                                                    build: nil,
+                                                                    release: nil)],
+                                                        watchOS: nil))
