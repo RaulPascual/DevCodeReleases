@@ -8,28 +8,6 @@
 import Foundation
 
 struct Utils {
-    func formatDate(day: Int, month: Int, year: Int, dateStyle: DateFormatter.Style) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = dateStyle
-        formatter.locale = Locale.current
-
-        guard let date = createDate(day: day, month: month, year: year) else {
-            return ""
-        }
-
-        return formatter.string(from: date)
-    }
-
-    func createDate(day: Int, month: Int, year: Int) -> Date? {
-        let calendar = Calendar.current
-        var dateComponents = DateComponents()
-        dateComponents.year = year
-        dateComponents.month = month
-        dateComponents.day = day
-
-        return calendar.date(from: dateComponents)
-    }
-
     func getXcodeVersionName(version: VersionModel) -> (key: String, value: String) {
         if version.version?.release?.beta != nil {
             return ("Beta", "\(version.version?.release?.beta ?? 0)")

@@ -124,7 +124,7 @@ struct LastVersionWidgetViewSystemSmall: View {
                     .scaledToFit()
                     .frame(width: 30, height: 30)
 
-                Text(Utils().formatDate(day: version.date?.day ?? 0,
+                Text(Date.formatDate(day: version.date?.day ?? 0,
                                         month: version.date?.month ?? 0,
                                         year: version.date?.year ?? 0,
                                         dateStyle: .short))
@@ -166,7 +166,7 @@ struct LastVersionWidgetViewSystemMedium: View {
                     .scaledToFit()
                     .frame(width: 30, height: 30)
 
-                Text(Utils().formatDate(day: version.date?.day ?? 0,
+                Text(Date.formatDate(day: version.date?.day ?? 0,
                                         month: version.date?.month ?? 0,
                                         year: version.date?.year ?? 0,
                                         dateStyle: .full))

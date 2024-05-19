@@ -53,6 +53,8 @@
 		C4852B9C2A3DF429007E1AE8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4852B962A3DF429007E1AE8 /* OnboardingView.swift */; };
 		C495357B2A2B40D5008F391A /* SystemsVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C495357A2A2B40D5008F391A /* SystemsVersions.swift */; };
 		C49535872A2B44E2008F391A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49535812A2B44E2008F391A /* DetailsView.swift */; };
+		C4B59A222BFA950E00F51A79 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B59A212BFA950E00F51A79 /* DateExtension.swift */; };
+		C4B59A232BFA955200F51A79 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B59A212BFA950E00F51A79 /* DateExtension.swift */; };
 		C4CF61DF2BCEC12E0085AE3C /* VersionInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61DE2BCEC12E0085AE3C /* VersionInformation.swift */; };
 		C4CF61E12BCEC1400085AE3C /* VersionSDKs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E02BCEC1400085AE3C /* VersionSDKs.swift */; };
 		C4CF61E32BCEC1550085AE3C /* VersionPublicationDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CF61E22BCEC1550085AE3C /* VersionPublicationDate.swift */; };
@@ -149,6 +151,7 @@
 		C4852B962A3DF429007E1AE8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C495357A2A2B40D5008F391A /* SystemsVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsVersions.swift; sourceTree = "<group>"; };
 		C49535812A2B44E2008F391A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		C4B59A212BFA950E00F51A79 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C4CF61DE2BCEC12E0085AE3C /* VersionInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionInformation.swift; sourceTree = "<group>"; };
 		C4CF61E02BCEC1400085AE3C /* VersionSDKs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSDKs.swift; sourceTree = "<group>"; };
 		C4CF61E22BCEC1550085AE3C /* VersionPublicationDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionPublicationDate.swift; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 				C4432C942A26942B00FB0697 /* TextExtension.swift */,
 				C41465FC2A291BC0007A7431 /* BaseProvider.swift */,
 				C4D3F1882A325BCD00FB50D7 /* StringExtension.swift */,
+				C4B59A212BFA950E00F51A79 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -654,6 +658,7 @@
 				C436BD322A2A9E3100B7E400 /* BuildView.swift in Sources */,
 				C4432C802A26905A00FB0697 /* HomeView.swift in Sources */,
 				C41465F82A291B5B007A7431 /* HTTPClientDTO.swift in Sources */,
+				C4B59A222BFA950E00F51A79 /* DateExtension.swift in Sources */,
 				C4432C972A26944800FB0697 /* LoaderView.swift in Sources */,
 				C40BC7AB2ACECC0A00550EBF /* WebView.swift in Sources */,
 				C4432C7E2A26905A00FB0697 /* HomeModelBusiness.swift in Sources */,
@@ -670,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C469BD6C2BD16A7D004C36AA /* LastVersionWidget.swift in Sources */,
+				C4B59A232BFA955200F51A79 /* DateExtension.swift in Sources */,
 				C469BD792BD1B79D004C36AA /* VersionView.swift in Sources */,
 				C469BD772BD19201004C36AA /* HomeModelServer.swift in Sources */,
 				C469BD6A2BD16A7D004C36AA /* LastVersionWidgetBundle.swift in Sources */,
