@@ -16,7 +16,7 @@ struct VersionPublicationDate: View {
                 Image("calendarIcon")
                     .resizable()
                     .frame(width: 35, height: 35)
-                Text(Utils().formatDate(day: version.date?.day ?? 0,
+                Text(Date.formatDate(day: version.date?.day ?? 0,
                                         month: version.date?.month ?? 0,
                                         year: version.date?.year ?? 0,
                                         dateStyle: .medium))
